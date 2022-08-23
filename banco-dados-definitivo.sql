@@ -9,6 +9,13 @@ descricao varchar(120) not null,
 primary key(papel_id)
 );
 
+insert into papeis_usuario(nome, descricao)
+VALUES ('Empreendedor', 'Utiliza a plataforma com objetivo de divulgar sua empresa e/ou encontrar conhecimentos sobre o meio empreendedor.'),
+('Consumidor', 'Utiliza a plataforma com objetivo de encontrar produtos de seu desejo.'),
+('Estudante', 'Utiliza a plataforma com o objetivo de prestar auxílio aos empreendedores e encontrar conhecimentos sobre o meio empreendedor.'),
+('Desenvolvedor','Desenvolve a plataforma Conecte-se');
+
+
 create table usuarios_da_plataforma(
 apelido varchar(30) not null,
 cpf varchar(11) not null,
