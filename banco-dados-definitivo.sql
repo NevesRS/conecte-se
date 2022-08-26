@@ -99,6 +99,9 @@ foreign key(proprietario)
 references usuarios_da_plataforma(apelido)
 );
 
+insert into empresas(nome, cnpj, proprietario, ramo, sobre_empresa, fundacao, numero_funcionarios, telefone, email)values
+('Orgânicos & Caipiras', '00000000000001',(select apelido  from usuarios_da_plataforma where nome="bruno"), (select ramo_id from ramos_empresas where nome="Agricultura Familiar"), 'Empresa voltada para agricultura familiar, atua na venda de produtos orgânicos, com entrega domiciliar de produtos como alfaces, temperos, chás entre outros.', '2016-07-12', '5', '51999999999', 'organicoscaipiras@contato.com.br');
+
 insert into papeis_usuario(nome, descricao)
 VALUES ('Empreendedor', 'Utiliza a plataforma com objetivo de divulgar sua empresa e/ou encontrar conhecimentos sobre o meio empreendedor.'),
 ('Consumidor', 'Utiliza a plataforma com objetivo de encontrar produtos de seu desejo.'),
@@ -133,14 +136,11 @@ insert into foruns(titulo, assunto, data_criacao, autor, comunidade, estado) val
 
 insert into ramos_empresas(nome, descricao) values
  ('Agricultura Familiar', 'Agricultura familiar é o cultivo da terra realizado por pequenos proprietários rurais, tendo como mão de obra, essencialmente, o núcleo familiar'),
- ('Desenvolvimento de Softwares', 'Desenvolvimento de software é o ato de elaborar e implementar um sistema computacional, a partir das demandas recebidas.'),
- ('Saúde e Bem Estar', 'Voltado para a manutenção da saúde e do bem estar das pessoas.'),
- ('Varejo', 'Venda de produtos e serviços em pequenas quantidades.');
-
+ ('Desenvolvimento de Softwares', 'Desenvolvimento de software é o ato de elaborar e implementar um sistema computacional, a partir das demandas recebidas.');
 
 select * from papeis_usuario;
 select * from usuarios_da_plataforma;
 select * from categorias_comunidades;
 select * from comunidades;
 select * from foruns;
- select * from respostas_foruns;
+select * from respostas_foruns;
